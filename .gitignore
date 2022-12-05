@@ -7,8 +7,9 @@ node_modules
 
 # misc
 .DS_Store
+.vscode
 
 # local env files
 .env*.local
 .env
-.env
+*.pyc

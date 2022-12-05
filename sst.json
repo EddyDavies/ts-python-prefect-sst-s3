@@ -1,0 +1,5 @@
+{
+  "name": "prefect-sst-s3",
+  "region": "eu-west-2",
+  "main": "stacks/index.ts"
+}
