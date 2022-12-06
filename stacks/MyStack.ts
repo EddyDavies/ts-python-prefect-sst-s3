@@ -27,17 +27,19 @@ export function MyStack({ stack }: StackContext) {
   });
   api.bind([bucket]);
 
-  new Function(stack, "CreateObject", {
+  const createdObject = new Function(stack, "CreateObject", {
     handler: "functions/created.handler",
-    bundle: {
-      installCommands: [
-        "pip install prefect awswrangler"
-
-      ]},
+    // srcPath: "services",
+    // runtime: "python3.9",
+    // bundle: {
+    //   installCommands: [
+    //     "pip install prefect awswrangler"
+  
+    //   ]},
     environment: {
       PREFECT_HOME: process.env.PREFECT_HOME,
-      PREFECT_API_KEY: process.env.PREFECT_API_KEY,
-      PREFECT_API_URL: process.env.PREFECT_API_URL,
+    //   PREFECT_API_KEY: process.env.PREFECT_API_KEY,
+    //   PREFECT_API_URL: process.env.PREFECT_API_URL,
     },
   });
 }
